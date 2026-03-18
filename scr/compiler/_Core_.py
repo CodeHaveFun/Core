@@ -1,16 +1,21 @@
-
-# Core main
 import argparse
-core_cli_parser = argparse.ArgumentParser(prog="core")
 
-core_cli_parser.add_argument("command", choices=["build","run"])
-core_cli_parser.add_argument("file", nargs="?")
+parser = argparse.ArgumentParser(prog="core")
 
-core_cli_args = core_cli_parser.parse_args()
+subparsers = parser.add_subparsers(dest="command")
 
-if core_cli_args.command == "build":
-    print("OK - Build")
-elif core_cli_args.command == "run":
-    print("OK - Run")
-print(core_cli_args.file)
+# command: run
+run_parser = subparsers.add_parser("run")
+run_parser.add_argument("file")
 
+# command: build
+build_parser = subparsers.add_parser("build")
+build_parser.add_argument("--fast", action="store_true")
+
+args = parser.parse_args()
+
+if args.command == "run":
+    print("Running file:", args.file)
+
+elif args.command == "build":
+    print("Building...", "FAST" if args.fast else "NORMAL")
