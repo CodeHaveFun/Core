@@ -1,5 +1,5 @@
 # Core | Programming Language Friendly
-|Programming Language|
+|ci|
 
 ---
 A programming language uses friendly syntax
