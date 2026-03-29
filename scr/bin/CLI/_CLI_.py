@@ -45,7 +45,7 @@ def _CoreCLI_():
         try:
             Core_Args = coreCLI_parse.split(input("~$ "), posix=False)
             _Excus_CMD_(Core_Args)
-        except Exception:
+        except (KeyboardInterrupt,ValueError):
             pass
             print()
 if __name__ == "__main__":
