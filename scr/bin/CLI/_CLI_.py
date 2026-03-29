@@ -2,8 +2,8 @@
 # ALL Commands CLI for Core Version 0.0.1
 #(MODE1): core
 # --> 1. 'build'
-#(MODE2): help
-# --> 1. '-cmd'
+# --> 2. 'run'
+#(MODE2): credits - help
 
 
 
