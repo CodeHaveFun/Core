@@ -35,6 +35,10 @@ def _Excus_CMD_(_IN_TOKEN_):
                             print(f"Core$ Build Locat: {CTE.WRG_BLD_CNT_SEF_TEXT} \nCore$ Build Locat: {CTE.WRG_BLD_CNT_SEF_ERR}\n")
                 else:
                     print(f"Core$: '{_IN_TOKEN_[1]}' {CTE.WRG_CMD_1_TEXT} \nCore$: {CTE.WRG_CMD_1_ERR}\n")
+        elif (_IN_TOKEN_[0] == "credits"):
+            print(CTE.core_credits, "\n")
+        elif (_IN_TOKEN_[0] == "help"):
+            print(CTE.core_options, "\n")
         else:
             # Case 1: Error Typing
             print(f"'{_IN_TOKEN_[0]}' {CTE.WRG_CMD_1_TEXT} \nErr: {CTE.WRG_CMD_1_ERR}\n") 

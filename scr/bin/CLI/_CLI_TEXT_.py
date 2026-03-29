@@ -1,7 +1,30 @@
 # CLI - @CodeHaveFun
 # CMD cant run - return text and print information, credits, etc.
+################ INFORMATIOM - CREDITS #########################
+core_credits = """
+ ╔══════════════════════════════════════╗
+ ║             CORE PROJECT             ║
+ ║             v0.0.1 - Demo            ║
+ ╚══════════════════════════════════════╝
+ Author      : @CodeHaveFun (Github)
+ Repository  : https://github.com/CodeHaveFun/Core
+ Rule        : Developer - Designer - Architect
+ Language    : Python
+ Framwork    : Core - CoreCLI
+ Platform    : Windows
+ Build       : Stable (Early Development)
+ License     : MIT
 
+"""
 
+core_options = """
+ Core CLI - Usage
+ Command:
+     core build <Path File>    | Build File
+     core run <Path File>      | Run File
+     credits                   | Show information
+     help                      | Show options
+"""
 ################ TEXT ERROR - CODE ERROR #######################
 # Text Error: Show for user see error information
 # Code Error: Show for user see error code
