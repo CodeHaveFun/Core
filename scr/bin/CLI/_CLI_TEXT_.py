@@ -29,6 +29,8 @@ core_options = """
 # Text Error: Show for user see error information
 # Code Error: Show for user see error code
 # |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+# Error end
+FAIL_BAR = "============FAIL============"
 # Case 1 (Popular): Error when typing wrong
 WRG_CMD_1_TEXT = "is not recognized or any commands"
 WRG_CMD_1_ERR = "WRG_CMD_1"
