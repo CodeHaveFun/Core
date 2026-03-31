@@ -10,7 +10,7 @@
 # parse token input
 import shlex as coreCLI_parse
 import os as coreSys
-import _CLI_TEXT_ as CTE
+import _ErrInfo_ as CTE
 from colorama import init, Fore, Back, Style
 init()
 def _ErrShow_(MODE=None, INFO=None, ERRCODE=None):
