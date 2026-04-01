@@ -6,5 +6,5 @@ echo.
 echo  Core Project 0.0.1 - Credits: @CodeHaveFun - In Developing
 echo  Type 'help' or 'credits' for show information, credits
 echo. 
-python CLI/_CLI_.py
+python -m Core.CLI._CLI_
 pause

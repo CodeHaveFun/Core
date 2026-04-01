@@ -25,6 +25,7 @@ core_options = """
      credits                   | Show information
      help                      | Show options
 """
+
 ################ TEXT ERROR - CODE ERROR #######################
 # Text Error: Show for user see error information
 # Code Error: Show for user see error code
@@ -39,7 +40,7 @@ WRG_CMD_1_ERR = "WRG_CMD_1"
 WRG_MSS_CMD_TEXT = "Missing command! Need adding a command"
 WRG_MSS_CMD_ERR = "WRG_MSS_CMD"
 # Case 3: Build need location file (Core$ Error)
-WRG_BLD_NED_LCT_TEXT = "Where is location file?"
+WRG_BLD_NED_LCT_TEXT = "Where is path file?"
 WRG_BLD_NED_LCT_ERR = "WRG_BLD_NED_LCT"
 # Case 4: Build cant see location or provide file
 WRG_BLD_CNT_SEF_TEXT = "Don't see file! Check right your path and file"
