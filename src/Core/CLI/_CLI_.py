@@ -74,11 +74,11 @@ def _Excus_CMD_(_IN_TOKEN_):
                                 "PATH_FILE": _IN_TOKEN_[2] # Path file
 
                             }
-                            # create file and write data (JSON)
-                            with open(config_path("../Corex/Parse/Core_config.json"), "w", encoding="utf-8") as JsonCore:
-                                json.dump(CoreCLI_Data, JsonCore, indent=4, ensure_ascii=False)
+                            # Show debug path file
                             print(f"[DEBUG]: Now {coreSys.getcwd()}")
-                            subprocess.run("Core/Corex/Parse/ParseToken.exe")
+                            # run Core.exe 
+                            subprocess.run(["Core/Corex/Core.exe", str(_IN_TOKEN_[2])]) 
+                            
                         else:
                             _ErrShow_(
                                 MODE="Core$ Build",
