@@ -21,5 +21,4 @@ class InputGetFile{
         string Clear(string &Text);
         
 };
-
 #endif
