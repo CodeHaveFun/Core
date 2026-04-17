@@ -5,7 +5,12 @@ string LexerTokenCore::Clear(string CodeTextLine){
     if(CodeTextLine[0] == '|'){ 
         return ""; // No code
     }else{
-        return CodeTextLine;
+        string CodeTemp;
+        for(char Text : CodeTextLine){
+            if(Text == '|') break;
+            CodeTemp += Text;
+        }
+        return CodeTemp;
     }
 }
 
