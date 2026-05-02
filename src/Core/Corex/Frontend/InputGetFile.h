@@ -17,8 +17,8 @@ class InputGetFile{
         bool isOpen();
         // Read next line
         bool next(string& line);
-        // Clear space
-        string Clear(string &Text);
         
 };
+
+
 #endif

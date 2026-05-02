@@ -13,14 +13,3 @@ bool InputGetFile::isOpen(){
 bool InputGetFile::next(string &line){
     return (bool)getline(FILE, line);
 }
-string InputGetFile::Clear(string &Text){
-    stringstream ClearLine(Text);
-    string ReturnOutput, Word;
-    while(ClearLine >> Word){
-        if(!ReturnOutput.empty()){
-            ReturnOutput += " ";
-        }
-        ReturnOutput += Word;
-    }
-    return ReturnOutput;
-}

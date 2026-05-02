@@ -14,7 +14,7 @@ int main(int argc, char const *argv[])
     }
     string line;
     while(IGF.next(line)){
-        string Codetemp = LTC.Clear(IGF.Clear(line));
+        string Codetemp = LTC.LexerToken(line);
         if(!Codetemp.empty()){
             cout << Codetemp << endl;
         }

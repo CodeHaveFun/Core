@@ -4,8 +4,9 @@
 using namespace std;
 class LexerTokenCore{
     public:
-        string Clear(string CodeTextLine);
         string LexerToken(string CodeTextLine);
+    private:
+        string AnalysisString(string INPUT_TOKEN);
 
 };
 #endif

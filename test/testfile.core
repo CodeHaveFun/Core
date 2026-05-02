@@ -1,11 +1,13 @@
-| Hello
-1 2 3 4 5
-asdadada
-asdasdadad
-|   afsad
-   |
-   
-asdsa ad asd as fas  a a     adfdd
-
-
-Hello |assas
+INPUT 1: "IF A == B"
+INPUT 2: "IF     A     ==     B"
+INPUT 3: "    IF A == B"
+INPUT 4: "IF A == B    "
+INPUT 5: "IFA==B"
+INPUT 6: "PRINT(Hello, World)"
+INPUT 7: "123 + 456 * 789"
+INPUT 8: "IF (x > 10) THEN y = 5"
+INPUT 9: ""
+INPUT 10: "   "
+INPUT 11: "a b c d e f g"
+INPUT 12: "====="
+INPUT 13: "IF a == b OR c != d"

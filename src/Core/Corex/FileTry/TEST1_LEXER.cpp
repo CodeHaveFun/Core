@@ -1,12 +1,10 @@
-#include "LexerTokenCore.h"
+#include <iostream>
 
-
-
-string LexerTokenCore::AnalysisString(string INPUT_TOKEN){
-    return "[" + INPUT_TOKEN + "]";
+using namespace std;
+string AnalysisString(string INPUT_TOKEN){
+    return "["+ INPUT_TOKEN + "]";
 }
-
-string LexerTokenCore::LexerToken(string CodeTextLine){
+string LexerToken(string CodeTextLine){
     string TokenTemp;
     string CodeOUTPUT;
     for(char Token : CodeTextLine){
@@ -20,3 +18,8 @@ string LexerTokenCore::LexerToken(string CodeTextLine){
     if(!TokenTemp.empty()) CodeOUTPUT += AnalysisString(TokenTemp);
     return CodeOUTPUT;
 }                   
+
+int main(){
+    string INPUT = "IF A == B";
+    cout << LexerToken(INPUT) << endl;
+}
