@@ -52,7 +52,7 @@ if exist "Corex\bin\core.exe" (
 :: Prepare file and build
 echo.
 echo Prepare file...
-
+ 
 :: Build InputGetFile.cpp
 echo ^[1/2^] ../Corex/Frontend/InputGetFile.cpp : Building file...
 g++ -c Corex/Frontend/InputGetFile.cpp -o Corex/BuildObj/IGF.o
