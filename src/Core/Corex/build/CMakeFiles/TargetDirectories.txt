@@ -1,0 +1,4 @@
+D:/Core/Core/src/Core/Corex/build/CMakeFiles/fontendobj.dir
+D:/Core/Core/src/Core/Corex/build/CMakeFiles/core.dir
+D:/Core/Core/src/Core/Corex/build/CMakeFiles/edit_cache.dir
+D:/Core/Core/src/Core/Corex/build/CMakeFiles/rebuild_cache.dir
