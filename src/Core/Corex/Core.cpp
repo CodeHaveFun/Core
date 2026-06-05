@@ -1,24 +1,28 @@
 /* Core - MainTain | @CodeHaveFun */
 
 #include <iostream>
-#include "Frontend/InputGetFile.h"
-#include "Frontend/LexerTokenCore.h"
-
-using namespace std; 
+#include "include\frontend.h"
+// Frontend
+frontend::InputGetFile IGF;
+frontend::LexerTokenCore LTC;
+frontend::ValueOut ValueOut;
 int main(int argc, char const *argv[])
 {
-    InputGetFile IGF(argv[1]);
-    LexerTokenCore LTC;
+    frontend_main(argc,argv);
+    /*
+    frontend::InputGetFile IGF(argv[1]);
+    frontend::LexerTokenCore LTC;
     if(!IGF.isOpen()){
-        cout << "Cant open file" << endl;
+        std::cout << "Cant open file" << std::endl;
     }
-    string line;
+    std::string line;
     while(IGF.next(line)){
-        string Codetemp = LTC.LexerToken(line);
+        std::string Codetemp = LTC.LexerToken(line);
         if(!Codetemp.empty()){
-            cout << Codetemp << endl;
+            std::cout << Codetemp << std::endl;
         }
     }
     return 0;
+    */
 }
 

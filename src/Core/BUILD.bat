@@ -12,18 +12,18 @@ set icuio79=Corex\bin\icuio79.dll
 set icutu79=Corex\bin\icutu79.dll
 set icuuc79=Corex\bin\icuuc79.dll
 :: Copy DLL File Runtime ^^
-set dicudt79=Corex\Frontend\Uni\DLLFile\icudt79.dll
-set dicuin79=Corex\Frontend\Uni\DLLFile\icuin79.dll
-set dicuio79=Corex\Frontend\Uni\DLLFile\icuio79.dll
-set dicutu79=Corex\Frontend\Uni\DLLFile\icutu79.dll
-set dicuuc79=Corex\Frontend\Uni\DLLFile\icuuc79.dll
+set dicudt79=Corex\lib\Uni\DLLFile\icudt79.dll
+set dicuin79=Corex\lib\Uni\DLLFile\icuin79.dll
+set dicuio79=Corex\lib\Uni\DLLFile\icuio79.dll
+set dicutu79=Corex\lib\Uni\DLLFile\icutu79.dll
+set dicuuc79=Corex\lib\Uni\DLLFile\icuuc79.dll
 
 :: Link DLL for ICU (UNICODE)
-set libicudt=Corex\Frontend\Uni\DLLFile\libicudt.dll.a
-set libicuin=Corex\Frontend\Uni\DLLFile\libicuin.dll.a
-set libicuio=Corex\Frontend\Uni\DLLFile\libicuio.dll.a
-set libicutu=Corex\Frontend\Uni\DLLFile\libicutu.dll.a
-set libicuuc=Corex\Frontend\Uni\DLLFile\libicuuc.dll.a
+set libicudt=Corex\lib\Uni\DLLFile\libicudt.dll.a
+set libicuin=Corex\lib\Uni\DLLFile\libicuin.dll.a
+set libicuio=Corex\lib\Uni\DLLFile\libicuio.dll.a
+set libicutu=Corex\lib\Uni\DLLFile\libicutu.dll.a
+set libicuuc=Corex\lib\Uni\DLLFile\libicuuc.dll.a
 
 echo ---------- Corex Builder ----------
 
@@ -120,35 +120,35 @@ echo.
 :: Check file linking DLL File (*.dll.a)
 echo Checking file linking dll file - International Components for Unicode (ICU)...
 if exist %libicudt% (
-    echo *OK* - Frontend\Uni\DLLFile\libicudt.dll.a
+    echo *OK* - lib\Uni\DLLFile\libicudt.dll.a
 ) else (
     echo *NOT FOUND* - Missing libicudt.dll.a file ^| The file needs to be updated!
     pause
     exit /b 1
 )
 if exist %libicuin% (
-    echo *OK* - Frontend\Uni\DLLFile\libicuin.dll.a
+    echo *OK* - lib\Uni\DLLFile\libicuin.dll.a
 ) else (
     echo *NOT FOUND* - Missing libicuin.dll.a file ^| The file needs to be updated!
     pause
     exit /b 1
 )
 if exist %libicuio% (
-    echo *OK* - Frontend\Uni\DLLFile\libicuio.dll.a
+    echo *OK* - lib\Uni\DLLFile\libicuio.dll.a
 ) else (
     echo *NOT FOUND* - Missing libicuio.dll.a file ^| The file needs to be updated!
     pause
     exit /b 1
 )
 if exist %libicutu% (
-    echo *OK* - Frontend\Uni\DLLFile\libicutu.dll.a
+    echo *OK* - lib\Uni\DLLFile\libicutu.dll.a
 ) else (
     echo *NOT FOUND* - Missing libicutu.dll.a file ^| The file needs to be updated!
     pause
     exit /b 1
 )
 if exist %libicuuc% (
-    echo *OK* - Frontend\Uni\DLLFile\libicuuc.dll.a
+    echo *OK* - lib\Uni\DLLFile\libicuuc.dll.a
 ) else (
     echo *NOT FOUND* - Missing libicuuc.dll.a file ^| The file needs to be updated!
     pause
@@ -195,9 +195,9 @@ if exist %icuuc79% (
 
 :: Final: Build main program
 echo.
-echo ^[FINAL^] ..\Corex\Core.cpp ..\Core\Frontend\Uni\DLLFile\*.dll.a : Building main file appliance (.exe)...
+echo ^[FINAL^] ..\Corex\Core.cpp ..\Core\lib\Uni\DLLFile\*.dll.a : Building main file appliance (.exe)...
 :: IMPORTANT CMD
-g++ -I.\Corex\Frontend/Uni ^
+g++ -I.\Corex\lib\Uni ^
     Corex\BuildObj\*.o ^
     Corex\Core.cpp ^
     .\%libicudt% ^

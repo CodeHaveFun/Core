@@ -1,15 +1,12 @@
 /* @CodeHaveFun - InputGetFile */
 
-#include "InputGetFile.h"
-#include <fstream>
-#include <string>
-#include <sstream>
-InputGetFile::InputGetFile(const string& PATH){
-    FILE.open(PATH);
+#include "frontend.h"
+void frontend::InputGetFile::FileOpen(const std::string &path){
+    FILE.open(path);
 }
-bool InputGetFile::isOpen(){
+bool frontend::InputGetFile::isOpen(void){
     return FILE.is_open();
 }
-bool InputGetFile::next(string &line){
+bool frontend::InputGetFile::next(std::string &line){
     return (bool)getline(FILE, line);
 }
