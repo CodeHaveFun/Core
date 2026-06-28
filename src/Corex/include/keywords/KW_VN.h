@@ -1,0 +1,46 @@
+#ifndef KW_VN_H
+#define KW_VN_H
+#include <map>
+#include <iostream>
+#include "../icu.h"
+#include "../tokendefine.h"
+/* 
+PACKAGE VIETNAMESE COMMAND DICTIONARY | COMMON SYSTEM LANGUAGE 
+*/
+
+
+/* #### `Vietnamese Commands Dictionary` <=> `Common System Language` */
+const std::map<std::string, TOKEN_CMD_CMM> KW_VIETNAMESE = {
+    {"gán",TOKEN_CMD_CMM::TOKEN_CMD_VARIABLE_DEFINE}, // cmd init variable
+    {"=", TOKEN_CMD_CMM::TOKEN_CMD_ASSIGN_DEFINE},
+    {"in", TOKEN_CMD_CMM::TOKEN_CMD_PRINT_DEFINE},
+
+    {"+",TOKEN_CMD_CMM::TOKEN_OPERATION_PLUS},
+    {"-", TOKEN_CMD_CMM::TOKEN_OPERATION_MINUS},
+    {"*", TOKEN_CMD_CMM::TOKEN_OPERATION_ASTERISK},
+    {"/", TOKEN_CMD_CMM::TOKEN_OPERATION_SLASH},
+
+    {">", TOKEN_CMD_CMM::TOKEN_COMPARE_GREATER},
+    {"<", TOKEN_CMD_CMM::TOKEN_COMPARE_LESS},
+    {"=>", TOKEN_CMD_CMM::TOKEN_COMPARE_GREATER_EQUALS_T1},
+    {">=", TOKEN_CMD_CMM::TOKEN_COMPARE_GREATER_EQUALS_T2},
+    {"<=", TOKEN_CMD_CMM::TOKEN_COMPARE_LESS_EQUALS_T1},
+    {"=<", TOKEN_CMD_CMM::TOKEN_COMPARE_LESS_EQUALS_T2},
+    {"==", TOKEN_CMD_CMM::TOKEN_COMPARE_EQUALS},
+    {"và", TOKEN_CMD_CMM::TOKEN_COMPARE_AND},
+    {"hoặc", TOKEN_CMD_CMM::TOKEN_COMPARE_OR},
+    {"khác", TOKEN_CMD_CMM::TOKEN_COMPARE_NOT},
+
+    {"nếu", TOKEN_CMD_CMM::TOKEN_CONDITION_CMD_IF_DEFINE},
+    {"hoặc nếu", TOKEN_CMD_CMM::TOKEN_CONDITION_CMD_IFELSE_DEFINE},
+    {"không thì", TOKEN_CMD_CMM::TOKEN_CONDITION_CMD_ELSE_DEFINE},
+
+    {"lặp", TOKEN_CMD_CMM::TOKEN_LOOP_CMD_FOR},
+    {"khi", TOKEN_CMD_CMM::TOKEN_LOOP_CMD_WHILE},
+
+    {"hàm", TOKEN_CMD_CMM::TOKEN_VOID_FUNC},
+    {"trả về", TOKEN_CMD_CMM::TOKEN_VOID_RETURN}
+
+    
+};
+#endif
