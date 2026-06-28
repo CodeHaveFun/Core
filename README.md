@@ -6,7 +6,12 @@ Core is a custom programming language built from scratch.
 - **IN DEVELOPMENT** 🛠
 
 ## Usage
-- **IN DEVELOPMENT** 🛠
+### Demo basic command CLI
+| Command | Explaining | Note |
+|:--------|:--------|:-----|
+| `core`  | Show usage command Core |
+| `core --version` | Show Core version now | 
+| `core build <your source file>` | Compile source file | You need replace `<your source file>` to your actual file path<br>Core <b>ONLY</b> accepts the `.core` file extension. |
 
 ## <img src="https://cdn-icons-png.flaticon.com/128/10348/10348994.png" width="30"/> Feature
 - Supports writing programs in multiple languages (English, Vietnamese, Japanese, etc).
