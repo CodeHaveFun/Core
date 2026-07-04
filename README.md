@@ -23,5 +23,7 @@
 - [👨🏻‍💻 CodeHaveFun - Developer](https://github.com/CodeHaveFun)
 
 ## License
-
 [MIT](https://choosealicense.com/licenses/mit/)
+
+## Opinion - Suggestion - Report bugs
+### Give me your opintion, suggestion or report bugs, I will improve Core Project better. (Open issues)
