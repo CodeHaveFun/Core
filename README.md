@@ -2,7 +2,7 @@
 # ![Progress](https://img.shields.io/badge/IN_DEVELOPEMT-blue?style=for-the-badge) ![Version](https://img.shields.io/badge/VERSION-0.0.1-brightgreen?style=for-the-badge)
 
 
-Core is a custom programming language built from scratch.
+- Core is a custom programming language built from scratch.
 
 ## <img src="https://cdn-icons-png.flaticon.com/128/724/724822.png" width="30"/> Installation
 # ![Progress](https://img.shields.io/badge/IN_DEVELOPEMT_🛠-blue?style=for-the-badge)
