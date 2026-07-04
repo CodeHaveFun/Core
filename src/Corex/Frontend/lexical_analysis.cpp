@@ -4,7 +4,7 @@ bool frontend::Front::isIdentify(const CoreUTF::LStringCharater char_input){
     return u_hasBinaryProperty(char_input, UCHAR_ID_START) || u_hasBinaryProperty(char_input, UCHAR_ID_CONTINUE) || char_input == U'_';
 }
 
-std::vector<info_token> frontend::Front::Lexical_Analysis(unsigned long long line, CoreUTF::LString CodeTextLine)
+std::vector<info_token> frontend::Front::Lexical_Analysis(const unsigned long long line, const CoreUTF::LString CodeTextLine)
 {
     CoreUTF::LString TempValue;
     std::vector<info_token> tokens;  
@@ -12,6 +12,7 @@ std::vector<info_token> frontend::Front::Lexical_Analysis(unsigned long long lin
     auto STk = [&](const TOKEN_CMD_CMM token_type, const CoreUTF::LString token_value){
         token.type = token_type;
         token.value = token_value;
+        token.line = line;
         tokens.emplace_back(token);
     };
     auto CharC = [&](const std::string c){
@@ -64,14 +65,15 @@ std::vector<info_token> frontend::Front::Lexical_Analysis(unsigned long long lin
 
             else if(ch == CharC(">")) STk(TOKEN_CMD_CMM::TOKEN_CMP_GREATER, ch);
             else if(ch == CharC("<")) STk(TOKEN_CMD_CMM::TOKEN_CMP_LESS, ch);
-            else if(ch == CharC(">=") || ch == CharC("=>")) STk(TOKEN_CMD_CMM::TOKEN_CMP_GREATER_EQUALS, ch);
-            else if(ch == CharC("=<") || ch == CharC("<=")) STk(TOKEN_CMD_CMM::TOKEN_CMP_LESS_EQUALS, ch);
+            //else if(ch == CharC(">=") || ch == CharC("=>")) STk(TOKEN_CMD_CMM::TOKEN_CMP_GREATER_EQUALS, ch); - not available (Only get 1 character)
+            //else if(ch == CharC("=<") || ch == CharC("<=")) STk(TOKEN_CMD_CMM::TOKEN_CMP_LESS_EQUALS, ch); - not available (Only get 1 character)
 
             else if(ch == CharC("+")) STk(TOKEN_CMD_CMM::TOKEN_OP_PLUS, ch);
             else if(ch == CharC("-")) STk(TOKEN_CMD_CMM::TOKEN_OP_MINUS, ch);
             else if(ch == CharC("*")) STk(TOKEN_CMD_CMM::TOKEN_OP_ASTERISK, ch);
             else if(ch == CharC("/")) STk(TOKEN_CMD_CMM::TOKEN_OP_SLASH, ch);
-
+            else if(ch == CharC("'")) STk(TOKEN_CMD_CMM::TOKEN_SINGLE_QUO, ch);
+            else if(ch == CharC(std::string(1, '"'))) STk(TOKEN_CMD_CMM::TOKEN_DOUBLE_QUO, ch);
         }
     }
     
@@ -79,5 +81,6 @@ std::vector<info_token> frontend::Front::Lexical_Analysis(unsigned long long lin
     
     
     FlushTemp();
+    STk(TOKEN_CMD_CMM::TOKEN_NEWLINE, ""); // End-line
     return tokens;
 }

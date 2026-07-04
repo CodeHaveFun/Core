@@ -60,7 +60,7 @@ const std::map<std::string, TOKEN_CMD_CMM> KW_ENGLISH = {
     // CONDITION COMMANDS: if, else if, else
     // ==========================================
     {"if", TOKEN_CMD_CMM::TOKEN_IF},               // condition command IF
-    {"else if", TOKEN_CMD_CMM::TOKEN_ELSE_IF},     // condition command ELSE IF
+    // {"else if", TOKEN_CMD_CMM::TOKEN_ELSE_IF},  // condition command ELSE IF (Connect token `if` to `else` if user selection english)
     {"else", TOKEN_CMD_CMM::TOKEN_ELSE},           // condition command ELSE
 
     // ==========================================
@@ -72,7 +72,7 @@ const std::map<std::string, TOKEN_CMD_CMM> KW_ENGLISH = {
     // ==========================================
     // FUNCTION COMMANDS: void, return
     // ==========================================
-    {"void", TOKEN_CMD_CMM::TOKEN_VOID},           // void function command
+    {"void", TOKEN_CMD_CMM::TOKEN_FUNCTION},           // void function command
     {"return", TOKEN_CMD_CMM::TOKEN_RETURN}        // return command in void function
 };
 

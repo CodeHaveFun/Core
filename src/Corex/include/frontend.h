@@ -53,15 +53,19 @@ namespace frontend{
     // ### Contain void processing string | `CoreUTF:LString`
     class Front{
         public:
-            std::vector<info_token> Lexical_Analysis(unsigned long long line, CoreUTF::LString CodeTextLine);
+            std::vector<info_token> Lexical_Analysis(const unsigned long long line, const CoreUTF::LString CodeTextLine);
+            std::vector<info_token> Filter_LV1(const std::vector<info_token>& ArrayToken);
+            std::vector<info_token> Token_Filter(const std::vector<info_token>& ArrayToken);
         private:
             bool isIdentify(const CoreUTF::LStringCharater char_input);
+
     };
 }
 // `InitStartCorex` to init all library and somethings modules before compiling
 unsigned int Corex(const std::string& PATH_FILE);
 // `CMD_SIZE_IN`: Size commands fron user input | `CMD_STR_IN[]`: All command input 
 void frontend_main(const int CMD_SIZE_IN,const char *CMD_STR_IN[]);
+void log(std::string ch_log);
 extern frontend::Front LTC;
 extern frontend::InputGetFile IGF;
 extern frontend::ValueOut ValueOut;

@@ -1,5 +1,9 @@
 #include "cdbuild.h"
 #include "frontend.h"
+void log(std::string ch_log){
+    std::cout << "[LOG/DEBUG]: " << ch_log << std::endl;
+    return;
+}
 // init
 unsigned int Corex(const std::string& PATH_FILE){
     IGF.FileOpen(PATH_FILE); // give path for open file
@@ -15,8 +19,8 @@ unsigned int Corex(const std::string& PATH_FILE){
         ValueOut.TextCode = CodeLineTemp;
         //std::cout << ValueOut.line << "|" << ValueOut.TextCode << std::endl;
         // read each character on each lines
-        auto tokens = LTC.Lexical_Analysis(ValueOut.line, CoreUTF::fromUTF8(ValueOut.TextCode));
-
+        auto tokens1 = LTC.Lexical_Analysis(ValueOut.line, CoreUTF::fromUTF8(ValueOut.TextCode));
+        auto tokens = LTC.Token_Filter(tokens1);
         for (size_t i = 0; i < tokens.size(); i++) {
             const auto& token = tokens[i];
             
@@ -27,6 +31,8 @@ unsigned int Corex(const std::string& PATH_FILE){
     }
     return 0;
 }
+
+
 std::string lower_letter(const std::string c){
     std::string output;
     for(int i = 0; i < c.length(); i++){

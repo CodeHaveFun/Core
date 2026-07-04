@@ -39,6 +39,15 @@ enum class TOKEN_CMD_CMM {
     TOKEN_OP_ASTERISK,  // `TOKEN_OP_ASTERISK`: set when system identify operation is `*`
     TOKEN_OP_SLASH,     // `TOKEN_OP_SLASH`: set when system identify operation is `/`
 
+    TOKEN_OP_PLUS_EQUAL, // `TOKEN_OP_PLUS_EQUAL`: set when system identify operation is `+=`
+    TOKEN_OP_PLUS_ONE, // `TOKEN_OP_PLUS_ONE`: set when system identify operation is `++`
+
+    TOKEN_OP_MINUS_EQUAL, // `TOKEN_OP_MINUS_EQUAL`: set when system identify operation is `-=`
+    TOKEN_OP_MINUS_ONE, // `TOKEN_OP_MINUS_ONE`: set when system identify operation is `--`
+
+    TOKEN_OP_ASTERISK_EQUAL, // `TOKEN_OP_ASTERISK_EQUAL`: set when system identify operation is `*=`
+    TOKEN_OP_SLASH_EQUAL, // `TOKEN_OP_SLASH_EQUAL`: set when system identify operation is `/=`
+
     // ==========================================
     // 5. BASIC COMMANDS
     // ==========================================
@@ -59,7 +68,8 @@ enum class TOKEN_CMD_CMM {
     TOKEN_COMMA,        // `TOKEN_COMMA`: set when user type `,` to separate list
     TOKEN_SEMICOLON,    // `TOKEN_SEMICOLON`: set when user type `;` to end statement
     TOKEN_NEWLINE,      // `TOKEN_NEWLINE`: set when system identify new line `\n`
-
+    TOKEN_DOUBLE_QUO,    // `TOKEN_DOUBLE_QUO`: set when system indentify `'`
+    TOKEN_SINGLE_QUO,    // `TOKEN_DOUBLE_QUO`: set when system indentify `"`
     // ==========================================
     // 7. IDENTIFIER
     // ==========================================
@@ -69,7 +79,11 @@ enum class TOKEN_CMD_CMM {
     // 8. CONDITION COMMANDS: if, else if, else
     // ==========================================
     TOKEN_IF,           // `TOKEN_IF`: set when user type command of condition with `IF` command
+    // ================
     TOKEN_ELSE_IF,      // `TOKEN_ELSE_IF`: set when type command of condition with `ELSE IF` command after starting `IF` command
+    //TOKEN_ELSE_IF_CH_1,
+    //TOKEN_ELSE_IF_CH_2,
+    // ================
     TOKEN_ELSE,         // `TOKEN_ELSE`: set when type command of condition with `ELSE` command after start `IF` or `ELSE IF` command
 
     // ==========================================
@@ -81,7 +95,7 @@ enum class TOKEN_CMD_CMM {
     // ==========================================
     // 10. FUNCTION COMMANDS: void, return
     // ==========================================
-    TOKEN_VOID,         // `TOKEN_VOID`: set when user type command of void function with `VOID` command
+    TOKEN_FUNCTION,         // `TOKEN_FUNCTION`: set when user type command of void function with `VOID` command
     TOKEN_RETURN,       // `TOKEN_RETURN`: set when user type command of void function with `RETURN` command in `VOID` command
 
     // ==========================================
