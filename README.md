@@ -3,6 +3,8 @@
 
 
 - Core is a custom programming language built from scratch.
+- Developer(s) can write programming with choosing between languages.
+- Compiler give error messages will `friendly` and guide how to fix it. (It shows with last choose your language)
 
 ## Installation
 # ![Progress](https://img.shields.io/badge/IN_DEVELOPEMT_🛠-blue?style=for-the-badge)
