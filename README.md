@@ -4,7 +4,7 @@
 
 - Core is a custom programming language built from scratch.
 
-## <img src="https://cdn-icons-png.flaticon.com/128/724/724822.png" width="30"/> Installation
+## Installation
 # ![Progress](https://img.shields.io/badge/IN_DEVELOPEMT_🛠-blue?style=for-the-badge)
 
 ## Usage
@@ -15,11 +15,11 @@
 | `core --version` | Show Core version now | 
 | `core build <source file>` | Compile source file | You need replace `<your source file>` to your actual file path.<br>Core <b>ONLY</b> accepts the `.core` file extension. |
 
-## <img src="https://cdn-icons-png.flaticon.com/128/10348/10348994.png" width="30"/> Feature
+## Feature
 - Supports writing programs in multiple languages (English, Vietnamese, Japanese, etc).
-## <img src="https://cdn-icons-png.flaticon.com/128/4248/4248082.png" width="30"/> Authors
+## Authors
 - [👨🏻‍💻 CodeHaveFun - Developer](https://github.com/CodeHaveFun)
 
-## <img src="https://cdn-icons-png.flaticon.com/128/3135/3135807.png" width="30"/> License
+## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
