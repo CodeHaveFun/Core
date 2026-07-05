@@ -16,7 +16,20 @@
 | `core`  | Show usage command Core |
 | `core --version` | Show Core version now | 
 | `core build <source file>` | Compile source file | You need replace `<your source file>` to your actual file path.<br>Core <b>ONLY</b> accepts the `.core` file extension. |
+| `core language <language>` | Switch language | Read tables for support your language and command to switch |
 
+## Supported Languages Table
+| Number | Language | Command Switching |
+|:------:|:--------:|:--------------:|
+| 1      | English  | `en` `eng` `english` |
+| 2      | Vietnamese | `vi` `vn` `vietnamese` |
+
+#### Exmaple command for switching languages
+```cmd
+    core language en
+    core language eng
+    core language english
+```
 ## Feature
 - Supports writing programs in multiple languages (English, Vietnamese, Japanese, etc).
 ## Authors
