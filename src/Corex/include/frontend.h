@@ -13,6 +13,8 @@
 #include <variant>
 #include "icu.h"
 #include "tokendefine.h"
+#include "config/setting.h"
+#include "cdbuild.h"
 #define LANGUAGE_SELECTION_EN
 #ifdef LANGUAGE_SELECTION_EN
     #include "keywords/KW_EN.h"
@@ -27,7 +29,7 @@ typedef struct{
 } info_token;
 namespace frontend{
     // Save textline and value line
-    typedef struct{
+    typedef struct{  
         // Save temp line text
         std::string TextCode;
         // line
@@ -53,6 +55,7 @@ namespace frontend{
     // ### Contain void processing string | `CoreUTF:LString`
     class Front{
         public:
+
             std::vector<info_token> Lexical_Analysis(const unsigned long long line, const CoreUTF::LString CodeTextLine);
             std::vector<info_token> Filter_LV1(const std::vector<info_token>& ArrayToken);
             std::vector<info_token> Token_Filter(const std::vector<info_token>& ArrayToken);

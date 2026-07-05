@@ -1,4 +1,4 @@
-#include "cdbuild.h"
+
 #include "frontend.h"
 void log(std::string ch_log){
     std::cout << "[LOG/DEBUG]: " << ch_log << std::endl;
@@ -45,17 +45,17 @@ std::string lower_letter(const std::string c){
     return output;
 }
 void frontend_main(const int CMD_SIZE_IN, char const *CMD_STR_IN[]){
-    
+    setLanguage(SetLanguage::VN);
     std::cout <<"[DEBUG] Size user input (int): "<< CMD_SIZE_IN << std::endl;
     // if start command 'core' and dont type any command (total cmd is 1) -> show how to use
     if(CMD_SIZE_IN == 1) std::cout << cd_how_usage_cmd << std::endl; // show usage
     else{
         // if start cmd with "--version" -> show version core now
-        if(strcmp(CMD_STR_IN[1], cd_version) == 0){
+        if(std::string(CMD_STR_IN[1]) == cd_version){
             std::cout << "Core Project | Version " << cd_version_now << std::endl;
 
         // cmd start build file
-        }else if(strcmp(CMD_STR_IN[1], cd_build) == 0){
+        }else if(std::string(CMD_STR_IN[1]) == cd_build){
             //InitStartCorex(CMD_STR_IN[2]);
             //check size enough 3 cmds? if enough -> start init Corex with path file input
             if(CMD_SIZE_IN == 3){
@@ -63,11 +63,21 @@ void frontend_main(const int CMD_SIZE_IN, char const *CMD_STR_IN[]){
                 if(file_extension.ends_with(cd_file_extension)){
                     Corex(CMD_STR_IN[2]);
                 }else{
-                    std::cout<<"Oh no! Core accepts only files with the '.core' extension and does not accept files with other extensions."<<std::endl;
-                    std::cout<<"Your '"<<CMD_STR_IN[2] <<"' is invalid."<<std::endl;
+                    std::cout<< cd_input_type_path_error_file_extension <<std::endl;
                 }
             }
             else std::cout << cd_input_type_path_lost_error << std::endl;
+        }else if(std::string(CMD_STR_IN[1]) == cd_switch_language){
+            if(CMD_SIZE_IN == 3){
+                auto it = selection_language.find(lower_letter(std::string(CMD_STR_IN[2])));
+                if(it != selection_language.end()){
+                    setLanguage(it->second);
+                }else{
+                    std::cout << cd_input_error_language << std::endl;
+                }
+            }else{
+                std::cout << cd_input_language_lost << std::endl;
+            }
         // if cmd 1 type error
         }else{
             // show error type cmd

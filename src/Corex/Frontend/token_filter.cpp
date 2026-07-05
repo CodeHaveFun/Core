@@ -8,8 +8,6 @@ std::vector<info_token> frontend::Front::Token_Filter(const std::vector<info_tok
 }
 
 std::vector<info_token> frontend::Front::Filter_LV1(const std::vector<info_token>& ArrayToken){
-    std::cout << "CHECK" <<ArrayToken[0].line << std::endl;
-    std::vector<TOKEN_CMD_CMM> TempValue;
     std::vector<info_token> Results;
     info_token token_temp;
     bool continue_read = true;
@@ -73,10 +71,10 @@ std::vector<info_token> frontend::Front::Filter_LV1(const std::vector<info_token
                     // -=, --
                     case TOKEN_CMD_CMM::TOKEN_OP_MINUS:
                         if(key_conti.type == TOKEN_CMD_CMM::TOKEN_CMD_ASSIGN){
-                            STk(TOKEN_CMD_CMM::TOKEN_OP_MINUS, "-=");
+                            STk(TOKEN_CMD_CMM::TOKEN_OP_MINUS_EQUAL, "-=");
                             continue_read = false;
                         }else if(key_conti.type == TOKEN_CMD_CMM::TOKEN_OP_MINUS){
-                            STk(TOKEN_CMD_CMM::TOKEN_OP_MINUS, "--");
+                            STk(TOKEN_CMD_CMM::TOKEN_OP_MINUS_ONE, "--");
                             continue_read = false;
                         }
                         break;
@@ -96,6 +94,8 @@ std::vector<info_token> frontend::Front::Filter_LV1(const std::vector<info_token
                         break;
 
                 }
+
+
             }
             if(continue_read) Results.emplace_back(key);
             

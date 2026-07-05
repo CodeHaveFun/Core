@@ -1,8 +1,8 @@
 /* Core - MainTain | @CodeHaveFun */
 
 #include <iostream>
-#include "include\frontend.h"
-
+#include "frontend.h"
+#include "config\TerminalSetup.h"
 
 // Frontend
 frontend::InputGetFile IGF;
@@ -11,6 +11,7 @@ frontend::ValueOut ValueOut;
 
 int main(int argc, char const *argv[])
 {
+    TerminalUTF8();
     frontend_main(argc,argv); // Provide size cmds and cmd string
     /*
     frontend::InputGetFile IGF(argv[1]);

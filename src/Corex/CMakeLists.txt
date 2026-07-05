@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 
 project(Corex)
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # output exe
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
@@ -11,13 +11,15 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/BuildObj)
 
 # include path
 include_directories(${CMAKE_SOURCE_DIR}/lib/Uni)
- 
+include_directories(${CMAKE_SOURCE_DIR}/include)
+include_directories(${CMAKE_SOURCE_DIR}/include/language)
 # frontend object/library
 add_library(fontendobj OBJECT
     ${CMAKE_SOURCE_DIR}/Frontend/fontend.cpp
     ${CMAKE_SOURCE_DIR}/Frontend/InputGetFile.cpp
     ${CMAKE_SOURCE_DIR}/Frontend/lexical_analysis.cpp
     ${CMAKE_SOURCE_DIR}/Frontend/token_filter.cpp
+    ${CMAKE_SOURCE_DIR}/Frontend/language.cpp
 )
 target_include_directories(fontendobj PRIVATE include)
 # main exe
