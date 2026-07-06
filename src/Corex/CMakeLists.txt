@@ -11,6 +11,7 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/BuildObj)
 
 # include path
 include_directories(${CMAKE_SOURCE_DIR}/lib/Uni)
+include_directories(${CMAKE_SOURCE_DIR}/lib)
 include_directories(${CMAKE_SOURCE_DIR}/include)
 include_directories(${CMAKE_SOURCE_DIR}/include/language)
 # frontend object/library
@@ -27,7 +28,7 @@ add_executable(core
     $<TARGET_OBJECTS:fontendobj>
     Core.cpp
 )
-# move dll runtime
+# move dll runtime and package language
 add_custom_target(copy_files ALL
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
     "${CMAKE_SOURCE_DIR}/lib/Uni/DLLFile/icudt79.dll"
@@ -48,6 +49,11 @@ add_custom_target(copy_files ALL
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
     "${CMAKE_SOURCE_DIR}/lib/Uni/DLLFile/icuuc79.dll"
     "${CMAKE_SOURCE_DIR}/bin/icuuc79.dll"
+
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+    "${CMAKE_SOURCE_DIR}/include/language"
+    "${CMAKE_SOURCE_DIR}/bin/language"
+
 
 )
 # ICU link

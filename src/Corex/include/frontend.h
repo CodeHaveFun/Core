@@ -11,10 +11,13 @@
 #include <cstring>
 #include <vector>
 #include <variant>
+
 #include "icu.h"
 #include "tokendefine.h"
 #include "config/setting.h"
 #include "cdbuild.h"
+
+
 #define LANGUAGE_SELECTION_EN
 #ifdef LANGUAGE_SELECTION_EN
     #include "keywords/KW_EN.h"
@@ -22,11 +25,13 @@
 #ifdef LANGUAGE_SELECTION_VN
     #include "keywords/KW_VN.h"
 #endif
+
 typedef struct{
     TOKEN_CMD_CMM type;
     CoreUTF::LString value;
     unsigned long long line;
 } info_token;
+
 namespace frontend{
     // Save textline and value line
     typedef struct{  
@@ -59,6 +64,8 @@ namespace frontend{
             std::vector<info_token> Lexical_Analysis(const unsigned long long line, const CoreUTF::LString CodeTextLine);
             std::vector<info_token> Filter_LV1(const std::vector<info_token>& ArrayToken);
             std::vector<info_token> Token_Filter(const std::vector<info_token>& ArrayToken);
+
+            std::string get(std::string data);
         private:
             bool isIdentify(const CoreUTF::LStringCharater char_input);
 
