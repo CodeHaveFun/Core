@@ -126,10 +126,13 @@ Source Code
     Lexer
       │
       ▼
+ GAMMAR WORDS
+      │
+      ▼
     Parser
       │
       ▼
-      AST
+     AST
       │
       ▼
  Semantic Analysis
