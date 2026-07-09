@@ -87,7 +87,7 @@ Instructions will be published after the first public release.
 
 # 🌍 Supported Languages
 
-| Language | Status | Command |
+| Language | Status | Switch Command |
 |----------|:------:|:------:|
 | English | ✅ | `en` |
 | Vietnamese | ✅ | `vi` |
