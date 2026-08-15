@@ -2,7 +2,7 @@
 
 <p align="center">
     <img src="https://img.shields.io/badge/Status-In_Development-blue?style=for-the-badge">
-    <img src="https://img.shields.io/badge/Version-0.0.1-brightgreen?style=for-the-badge">
+    <img src="https://img.shields.io/badge/Version-0.0.1a-brightgreen?style=for-the-badge">
     <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge">
 </p>
 
