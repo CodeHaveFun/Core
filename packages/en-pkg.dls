@@ -1,0 +1,10 @@
+
+#core-version:0.0.1a
+#language:en
+
+
+~COMMAND-SET-VAR:set
+~COMMAND-PRINT:print
+~COMMAND-IF:if
+
+IF@THEN_COMMAND CODE_BLOCK END_BLOCK COMMAND-IF SQ

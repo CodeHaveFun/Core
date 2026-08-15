@@ -1,5 +1,0 @@
-D:/Core/Core/build/CMakeFiles/fontendobj.dir
-D:/Core/Core/build/CMakeFiles/core.dir
-D:/Core/Core/build/CMakeFiles/copy_files.dir
-D:/Core/Core/build/CMakeFiles/edit_cache.dir
-D:/Core/Core/build/CMakeFiles/rebuild_cache.dir
