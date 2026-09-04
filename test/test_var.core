@@ -1,1 +1,16 @@
 set a = 10 + 10
+
+if (a > 10) or (a > 11) then
+
+    print "hello"
+
+or if (a < 10) or (a < 11) then
+
+    print "yes"
+
+or then
+    print "no"
+
+end
+
+for

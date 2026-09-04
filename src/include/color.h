@@ -211,4 +211,17 @@ namespace colorterminal
 #define STRIKE(text) \
     colorterminal::Strike << text << colorterminal::Reset
 
+#define OK(text) \
+    BRIGHT_GREEN("[OK] ") << text
+
+#define FAIL(text) \
+    BRIGHT_RED("[FAIL] ") << text
+
+#define PROCESS(text) \
+    BRIGHT_BLUE("[PROCESS] ") << text
+
+#define WARNING(text) \
+    BRIGHT_YELLOW("[WARNING] ") << text
+
+
 #endif

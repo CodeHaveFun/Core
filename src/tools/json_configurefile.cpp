@@ -1,10 +1,13 @@
 #include "json.hpp"
 #include "tools.h"
 #include "debug.h"
+#include <cmath>
 #include <filesystem>
 #include "color.h"
 #include <fstream>
+#include <pthread.h>
 #include <vector>
+#include "core.h"
 
 // old read file
 /* READ - CREATE PART */
@@ -112,5 +115,81 @@ void tools::TempConfig::GetConfig(){
     log(BRIGHT_GREEN("[OK]") << "Core updated finish config.")
 }
 */
+
+// Update: Use JSON for config file
+
+tools::ConfigureFile::ErrorOpen tools::ConfigureFile::CheckConfigureFile(){
+    if(!std::filesystem::exists(path_config_file_get)) return tools::ConfigureFile::ErrorOpen::NOT_FOUND_CONFIGURE_FILE;
+    std::ifstream file_read(path_config_file_get);
+    if(!file_read.is_open()) return tools::ConfigureFile::ErrorOpen::CANNOT_OPEN_CONFIGURE_FILE;
+    file_read.close();
+    return tools::ConfigureFile::ErrorOpen::SUCCESS;
+}
+
+
+// Create new configure file (json)
+void tools::ConfigureFile::CreateNewConfigureFile(){
+    // logs("Creating new configure file...") 
+    logs(PROCESS("Creating new configure file..."))
+    nlohmann::json json_make;
+
+    std::ofstream file_make(path_config_file_get);
+
+    json_make["language-last"] = "";
+
+    file_make << json_make.dump(4);
+
+
+    file_make.close();
+    //logs(" [OK] Created new configure file.")
+    logs(OK("Created new configure file"))
+}
+nlohmann::json tools::ConfigureFile::ReadConfigureFile(){
+    logs(PROCESS("Reading configure file... (") << path_config_file_get << ")");
+    nlohmann::json json;
+    std::ifstream file_read(path_config_file_get);
+    file_read >> json;
+    file_read.close();
+    logs(OK("Read configure file (") << path_config_file_get << ")");
+    return json;
+}
+
+void tools::ConfigureFile::WriteConfigureFile(const nlohmann::json& data_write){
+    logs(PROCESS("Updating configure file... (") << path_config_file_get << ")");
+    std::ofstream file_write(path_config_file_get);
+    file_write << data_write.dump(4);
+    file_write.close();
+    logs(OK("Updated configure file (") << path_config_file_get << ")");
+}
+
+
+
+
+void tools::ConfigureFile::Change_LastUsed_ConfigureFile(const std::string& name_package){
+    nlohmann::json data = ReadConfigureFile();
+
+    logs(PROCESS("Changing last used language:" << data["language-last"].get<std::string>() << " -> " << name_package <<"... (") << path_config_file_get << ")");
+
+    if(name_package == data["language-last"].get<std::string>()){
+        logs(WARNING("Last used language was same this change! (") << path_config_file_get << ")");
+        return;
+    }
+    data["language-last"] = name_package;
+
+    WriteConfigureFile(data);
+    logs(OK("Changed last used language:" << data["language-last"].get<std::string>() << " -> " << name_package <<" (") << path_config_file_get << ")");
+}
+
+bool tools::ConfigureFile::Check_LastUsed_IsEmpty_ConfigureFile(){
+    nlohmann::json data = ReadConfigureFile();
+
+    if(data["language-last"].get<std::string>() == ""){
+        return true;
+    }
+    return false;
+}
+
+
+
 
 

@@ -3,6 +3,6 @@
 #include "color.h"
 extern bool debug_mode;
 
-#define log(content) if(debug_mode) std::cout << BRIGHT_CYAN("[debug-mode]") << content << "\n";
+#define logs(content) if(debug_mode) std::cout << BRIGHT_CYAN("[debug-mode]") << content << "\n";
 
 #endif

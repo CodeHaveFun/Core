@@ -1,18 +1,20 @@
-
 #include "core.h"
-#include "cli_terminal.h"
+#include "color.h"
 #include "debug.h"
 #include "tools.h"
-#include <cstdio>
+
+#include "cli_terminal.h"
+
 /*
 When starting to compile source file from command
 
+# Old change
 S1: Core reads config file.  (*.cfc - cfc: config core)
     - Load debug mode
     - Load installed language path (from OLP - Option Language Package) *.olp
 
 # UPDATE CHANGE
-TODO: Use JSON instead of cfc for configure file.
+TODO: Use JSON for configure file.
 
 */
 
@@ -20,36 +22,42 @@ TODO: Use JSON instead of cfc for configure file.
 /* --- MAIN PROGRAMMING --- */
 
 int main(const int argc, const char* argv[]){
+    // Default debug mode: false
+    debug_mode = true;
 
-    debug_mode = false;
-    // start CLI
+    // start CLI with argc and argv
     CoreCLI CLI(argc, argv);
 
     // Init CLI
     CLI.InitTerminal();
-
-
-    // process command (parse)
-    CLI.CommandProcessor();
-
+    /*
+    logs(PROCESS("Setuping configure program..."))
     // Start read config file with defualt
-    tools::TempConfig file_config; 
-    
-    // Read Config File
-    file_config.ReadConfigFile();
+    tools::ConfigureFile Configure;
 
-    // Get Info Config
-    file_config.GetConfig();
+    int COUT_RETRY_TIME = 0;
 
+    auto status = Configure.CheckConfigureFile();
 
-    
-    for(auto &raw : file_config.content_parse){
-        for(auto &value : raw){
-            std::cout << value << " ";
+    while(status == Configure.NOT_FOUND_CONFIGURE_FILE){
+        if(COUT_RETRY_TIME >= Configure.RETRY_READ_FILE_COUNT){
+            logs(BRIGHT_RED("[FAIL]")
+                << "Core tried to find and create configure file in "
+                << Configure.RETRY_READ_FILE_COUNT << " times");
+            return 1;
         }
-        std::cout << "\n";
-    }
 
+        Configure.CreateNewConfigureFile();
+        COUT_RETRY_TIME++;
+
+        status = Configure.CheckConfigureFile();
+    }
+    logs(OK("Finished setup configure program"))
+    logs(PROCESS("Setuping and loading language program..."))
+    */
+
+
+    CLI.ParseMain();
 
 
     return 0;

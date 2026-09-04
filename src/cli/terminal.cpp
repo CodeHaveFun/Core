@@ -1,15 +1,17 @@
 #include "cli_terminal.h"
 #include "command.h"
+#include "errors.h"
+#include "meta/version.h"
 #include "terminal.h"
 #include "color.h"
 #include "tools.h"
 #include "debug.h"
 
 #include <cstddef>
+#include <cstdint>
 
-bool debug_mode = false;
 
-
+bool debug_mode = true;
 
 
 void CoreCLI::InitTerminal(void){
@@ -34,24 +36,6 @@ void CoreCLI::InitTerminal(void){
     #endif
 }
 
-void CoreCLI::CommandProcessor(){
-    tools tools;
-    // Scan elements in array
-    for(size_t i = 0; i < internal_array_size; i++){
-        std::string element_value = internal_array_content[i];
 
-        if(element_value.starts_with("--"))
-        {
-            Flag(FLAG_LONG, tools.Remove_Char(element_value, FLAG_LONG));
-        }
-        // `-`: Short flag
-        else if(element_value.starts_with("-"))
-        {
-            Flag(FLAG_SHORT, tools.Remove_Char(element_value, FLAG_SHORT));
-        }else if(element_value.starts_with("build")){
 
-        }
-        
-    }
-}
-
+ 

@@ -13,7 +13,7 @@ namespace author {
     constexpr const char* contact_email = "phanthanhdanh657@gmail.com";   
 
     constexpr const char* project_start_year = "2026";
-    constexpr const char* copyright_notice = "Copyright © 2026 Danh";
+    constexpr const char* copyright_notice = "Copyright © 2026 CodeHaveFun";
 }
 
 

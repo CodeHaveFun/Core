@@ -1,24 +1,32 @@
 #include "tools.h"
+#include <cstddef>
 
-std::string tools::Remove_Char(const std::string& text, const std::string& char_rm){
-    std::string results;
+std::string tools::Remove_Char(
+    const std::string& text,
+    const std::string& char_rm)
+{
+    std::string results = text;
 
-    for(size_t i = 0; i < text.length(); i++)
+    size_t pos = 0;
+
+    while ((pos = results.find(char_rm, pos)) != std::string::npos)
     {
-        bool keep = true; 
-
-        for(size_t j = 0; j < char_rm.length(); j++)
-        {
-            if(text[i] == char_rm[j])
-            {
-                keep = false;
-                break;
-            }
-        }
-
-        if(keep)
-            results += text[i];
+        results.erase(pos, char_rm.length());
     }
 
     return results;
+}
+bool tools::CheckText_StartWith(
+    const std::string& text,
+    const std::string& text_need_checked)
+{
+    if(text.size() < text_need_checked.size())
+        return false;
+
+    for(size_t i = 0; i < text_need_checked.size(); i++){
+        if(text[i] != text_need_checked[i])
+            return false;
+    }
+
+    return true;
 }

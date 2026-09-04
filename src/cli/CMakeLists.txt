@@ -1,6 +1,10 @@
 add_library(CoreCLI STATIC
-    cli_terminal.cpp
+    terminal.cpp
     config_terminal.cpp
-    options/flag.cpp
-    options/build.cpp
+    options_info/version.cpp
+    options_info/help.cpp
+    checkexistfile.cpp
+    main.cpp
+    registor_.cpp
+
 )

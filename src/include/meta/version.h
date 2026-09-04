@@ -5,7 +5,7 @@ namespace version {
 
     constexpr const char* core_name = "Core";
     constexpr const char* core_version = "0.0.1a";
-    constexpr bool core_beta = true;
+    constexpr bool core_beta = true; // Beta version
 
     /* What OS build on */
     #if defined(_WIN32)
@@ -33,7 +33,20 @@ namespace version {
     #endif
 
 
-    constexpr const char* cpp_standard_version = "C++23";
+
+    #if __cplusplus >= 202302L
+        constexpr const char* cpp_standard_version = "C++23";
+    #elif __cplusplus >= 202002L
+        constexpr const char* cpp_standard_version = "C++20";
+    #elif __cplusplus >= 201703L
+        constexpr const char* cpp_standard_version = "C++17";
+    #elif __cplusplus >= 201402L
+        constexpr const char* cpp_standard_version = "C++14";
+    #elif __cplusplus >= 201103L
+        constexpr const char* cpp_standard_version = "C++11";
+    #else
+        constexpr const char* cpp_standard_version = "C++98";
+    #endif
 
     constexpr const char* license = "MIT";
 
