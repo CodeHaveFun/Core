@@ -1,5 +1,6 @@
 
-## Construct Syntax <label style="color:grey;font-size:18px">*The syntax is NOT finalized and may change in future*</label> UPD: `Sep-3-2026`
+## Construct Syntax UPD: `Sep-3-2026`
+<label style="color:grey;font-size:18px">*The syntax is NOT finalized and may change in future*</label>
 The syntax will continue to improve in the future.
 ### 0. Comment: `//` `#` `;`
 - Core supports three single-line comment styles: <br>
